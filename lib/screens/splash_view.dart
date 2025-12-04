@@ -1,7 +1,6 @@
-import 'package:expense_app/utils/extenstions/integer_extenstion.dart';
+import 'package:expense_app/utils/constants/debug_log_function.dart';
 import 'package:expense_app/utils/routes/routes.dart';
 import 'package:expense_app/utils/themes/text-style.dart';
-import 'package:expense_app/utils/widgets/loader.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -28,7 +27,7 @@ class _SplashViewState extends State<SplashView> with SingleTickerProviderStateM
     controller.forward();
 
     controller.addStatusListener((status) {
-      print("status => $status");
+      debugLog("status => $status");
       if (status == AnimationStatus.completed) {
         Navigator.pushReplacementNamed(context, Routes.loginScreen);
       }
