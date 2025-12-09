@@ -18,6 +18,8 @@ dependencies:
   equatable: ^2.0.7
   google_sign_in: ^7.2.0
   firebase_auth: ^6.1.2
+  shared_preferences: ^2.5.3
+  pinput: ^6.0.1
 
 dev_dependencies:
   flutter_test:
@@ -39,4 +41,38 @@ flutter:
       fonts:
         - asset: assets/fonts/Nunito_Sans/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf
         - asset: assets/fonts/Nunito_Sans/NunitoSans-Italic-VariableFont_YTLC,opsz,wdth,wght.ttf
+          style: italic
+    - family: Boldonse
+      fonts:
+        - asset: assets/fonts/Boldonse/Boldonse-Regular.ttf
+    - family: Lato
+      fonts:
+        - asset: assets/fonts/Lato/Lato-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/Lato/Lato-ThinItalic.ttf
+          weight: 100
+          style: italic
+
+        - asset: assets/fonts/Lato/Lato-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Lato/Lato-LightItalic.ttf
+          weight: 300
+          style: italic
+
+        - asset: assets/fonts/Lato/Lato-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Lato/Lato-Italic.ttf
+          weight: 400
+          style: italic
+
+        - asset: assets/fonts/Lato/Lato-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Lato/Lato-BoldItalic.ttf
+          weight: 700
+          style: italic
+
+        - asset: assets/fonts/Lato/Lato-Black.ttf
+          weight: 900
+        - asset: assets/fonts/Lato/Lato-BlackItalic.ttf
+          weight: 900
           style: italic

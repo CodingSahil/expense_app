@@ -11,11 +11,11 @@ class TextFieldValidationState extends Equatable {
   }
 
   TextFieldValidationState empty() {
-    return const TextFieldValidationState(isError: false, errorMessage: null);
+    return const TextFieldValidationState(isError: false);
   }
 
   factory TextFieldValidationState.empty() {
-    return const TextFieldValidationState(isError: false, errorMessage: null);
+    return const TextFieldValidationState(isError: false);
   }
 
   @override

@@ -354,8 +354,9 @@ class _LabeledUnderlineTextFormFieldState extends State<LabeledUnderlineTextForm
           : <TextInputFormatter>[UpperCaseTextFormatter()],
       onTap: widget.onTap,
       style: AppTextTheme.textStyle(
-        fontWeight: FontWeight.normal,
-        fontSize: 15,
+        fontWeight: FontWeight.w900,
+        isBoldonse: true,
+        fontSize: 24,
         color: widget.showRedTextColor ? Theme.of(context).colorScheme.error : Theme.of(context).colorScheme.onSurface,
       ),
       decoration: InputDecoration(

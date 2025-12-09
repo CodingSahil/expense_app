@@ -1,3 +1,4 @@
+import 'package:expense_app/utils/extenstions/integer_extenstion.dart';
 import 'package:expense_app/utils/themes/text-style.dart';
 import 'package:flutter/material.dart';
 
@@ -76,6 +77,7 @@ class BorderButton extends StatelessWidget {
     this.disableButton = false,
     this.isLoader = false,
     this.loader,
+    this.prefix,
   });
 
   final String label;
@@ -88,6 +90,7 @@ class BorderButton extends StatelessWidget {
   final bool disableButton;
   final bool isLoader;
   final Widget? loader;
+  final Widget? prefix;
 
   @override
   Widget build(BuildContext context) {
@@ -110,13 +113,21 @@ class BorderButton extends StatelessWidget {
         alignment: Alignment.center,
         child: isLoader && loader != null
             ? loader
-            : AppTextTheme.text(
-                label,
-                fontSize: labelFontSize,
-                color: disableButton
-                    ? Theme.of(context).colorScheme.onSurfaceVariant
-                    : (fontColor ?? Theme.of(context).colorScheme.primary),
-                fontWeight: FontWeight.w800,
+            : Row(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  if (prefix != null) ...[prefix!, 12.width],
+                  AppTextTheme.text(
+                    label,
+                    fontSize: labelFontSize,
+                    color: disableButton
+                        ? Theme.of(context).colorScheme.onSurfaceVariant
+                        : (fontColor ?? Theme.of(context).colorScheme.primary),
+                    fontWeight: FontWeight.w900,
+                  ),
+                ],
               ),
       ),
     );

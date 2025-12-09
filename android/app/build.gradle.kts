@@ -31,10 +31,7 @@ android {
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
-        manifestPlaceholders = [
-            appAuthRedirectScheme: "com.example.expense_app"
-        ]
-
+        manifestPlaceholders["appAuthRedirectScheme"] = "com.example.expense_app"
     }
 
     buildTypes {
@@ -49,5 +46,3 @@ android {
 flutter {
     source = "../.."
 }
-
-apply plugin: 'com.google.gms.google-services'
