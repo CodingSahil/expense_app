@@ -1,3 +1,4 @@
+import 'package:expense_app/bloc/home/home_bloc.dart';
 import 'package:expense_app/bloc/login/login_bloc.dart';
 import 'package:expense_app/bloc/splash/splash_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,6 +16,7 @@ class InternalInitializerState {
       providers: [
         BlocProvider<SplashCubit>(create: (context) => SplashCubit()),
         BlocProvider<LoginBloc>(create: (context) => LoginBloc()),
+        BlocProvider<HomeBloc>(create: (context) => HomeBloc()),
       ],
     );
   }

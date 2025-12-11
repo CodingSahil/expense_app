@@ -1,5 +1,6 @@
 import 'package:expense_app/screens/auth/login_view.dart';
 import 'package:expense_app/screens/auth/otp_verification_view.dart';
+import 'package:expense_app/screens/home/home_view.dart';
 import 'package:expense_app/screens/splash_view.dart';
 import 'package:expense_app/utils/routes/routes.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,9 @@ Route<dynamic>? onGenerateRoute(RouteSettings settings) {
 
     case Routes.otpVerificationView:
       return MaterialPageRoute(builder: (context) => OtpVerificationView());
+
+    case Routes.homeView:
+      return MaterialPageRoute(builder: (context) => HomeView());
 
     default:
       return MaterialPageRoute(builder: (context) => SplashView());

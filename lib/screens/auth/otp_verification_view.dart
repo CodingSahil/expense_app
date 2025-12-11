@@ -1,7 +1,10 @@
 import 'package:expense_app/utils/themes/text-style.dart';
+import 'package:expense_app/utils/widgets/animated_loader.dart';
+import 'package:expense_app/utils/widgets/common_button.dart';
 import 'package:flutter/material.dart';
 
 import 'package:expense_app/utils/extenstions/integer_extenstion.dart';
+import 'package:flutter/services.dart';
 import 'package:pinput/pinput.dart';
 
 class OtpVerificationView extends StatefulWidget {
@@ -53,12 +56,18 @@ class _OtpVerificationViewState extends State<OtpVerificationView> with SingleTi
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                AppTextTheme.text("Enter OTP", color: Theme.of(context).colorScheme.onSurface, fontSize: 18),
+                AppTextTheme.text(
+                  "Enter OTP",
+                  color: Theme.of(context).colorScheme.onSurface,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w900,
+                ),
                 10.height,
                 AppTextTheme.text(
                   "We have sent an OTP to $mobileNumber",
                   color: Theme.of(context).colorScheme.onSurface,
                   fontSize: 15,
+                  fontWeight: FontWeight.w600,
                 ),
                 40.height,
                 Pinput(
@@ -67,15 +76,26 @@ class _OtpVerificationViewState extends State<OtpVerificationView> with SingleTi
                   defaultPinTheme: PinTheme(
                     height: 55,
                     width: 50,
-                    textStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    textStyle: AppTextTheme.textStyle(
+                      color: Theme.of(context).colorScheme.onSurface,
+                      fontSize: 16,
+                      isBoldonse: true,
+                      fontWeight: FontWeight.w900,
+                    ),
                     decoration: BoxDecoration(
                       border: Border(bottom: BorderSide(color: Theme.of(context).colorScheme.primary, width: 2)),
                     ),
                   ),
+                  inputFormatters: <TextInputFormatter>[LengthLimitingTextInputFormatter(10)],
                   focusedPinTheme: PinTheme(
                     height: 55,
                     width: 50,
-                    textStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    textStyle: AppTextTheme.textStyle(
+                      color: Theme.of(context).colorScheme.onSurface,
+                      fontSize: 16,
+                      isBoldonse: true,
+                      fontWeight: FontWeight.w900,
+                    ),
                     decoration: BoxDecoration(
                       border: Border(bottom: BorderSide(color: Theme.of(context).colorScheme.primary, width: 3)),
                     ),
@@ -87,20 +107,14 @@ class _OtpVerificationViewState extends State<OtpVerificationView> with SingleTi
 
                 // BlocBuilder<LoginBloc, LoginState>(
                 //   builder: (context, state) {
-                //     return ClickablePrimaryButton(
-                //       label: "Verify OTP",
-                //       isLoader: false,
-                //       height: MediaQuery.sizeOf(context).height * 0.058,
-                //       loader: CircularProgressIndicator(),
-                //       onTap: () {
-                //         context.read<LoginBloc>().add(
-                //           VerifyOTPEvent(
-                //             otp: otpController.text.trim(),
-                //             context: context,
-                //           ),
-                //         );
-                //       },
-                //     );
+                ClickablePrimaryButton(
+                  label: "Verify OTP",
+                  isLoader: false,
+                  height: MediaQuery.sizeOf(context).height * 0.058,
+                  loader: AnimatedLoginLoader(),
+                  onTap: () {},
+                ),
+                //     ;
                 //   },
                 // ),
                 //

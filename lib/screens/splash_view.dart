@@ -29,7 +29,8 @@ class _SplashViewState extends State<SplashView> with SingleTickerProviderStateM
     controller.addStatusListener((status) {
       debugLog("status => $status");
       if (status == AnimationStatus.completed) {
-        Navigator.pushReplacementNamed(context, Routes.loginScreen);
+        // Navigator.pushReplacementNamed(context, Routes.loginScreen);
+        Navigator.pushReplacementNamed(context, Routes.homeView);
       }
     });
     super.initState();

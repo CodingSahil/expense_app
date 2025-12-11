@@ -12,10 +12,16 @@ class AppTextTheme {
     );
   }
 
-  static Widget text(String text, {required Color color, double? fontSize, FontWeight? fontWeight}) {
+  static Widget text(
+    String text, {
+    required Color color,
+    double? fontSize,
+    FontWeight? fontWeight,
+    bool isBoldonse = false,
+  }) {
     return Text(
       text,
-      style: textStyle(color: color, fontSize: fontSize, fontWeight: fontWeight),
+      style: textStyle(color: color, fontSize: fontSize, fontWeight: fontWeight, isBoldonse: isBoldonse),
     );
   }
 }
